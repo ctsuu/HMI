@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <!link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.8.1/css/ol.css" type="text/css">
     <link rel="stylesheet" href="./libs/v6.8.1-dist/ol.css" type="text/css">
+    <link rel="stylesheet" href="./styles.css">
     <style>
       .map {
         height: 600px;
@@ -15,8 +16,32 @@
     <title>OpenLayers example</title>
   </head>
   <body>
-    <h2>Calgary Map</h2>
-    <div id="js-map" class="map"></div>
+    
+    <div class="grid-container">
+      <div class="grid-1">
+        <div class="sidebar">
+          <h2>Base Map Layers</h2>
+          <input type="radio" name='baseLayerRadioButton' value='OSMStandard'>OSM Standard<br>
+          <input type="radio" name='baseLayerRadioButton' value='StamenWatercolor' >Stamen Watercolor<br>
+          <input type="radio" name='baseLayerRadioButton' value='StamenTerrain' >Stamen Terrain<br>
+          <input type="radio" name='baseLayerRadioButton' value='TransportDark' >Transit Dark<br>
+          <input type="radio" name='baseLayerRadioButton' value='TransportBright' >Transit Bright<br>
+          <input type="radio" name='baseLayerRadioButton' value='OpenCycleMap' >Open Cycle Path<br>
+          
+          
+        </div>
+      </div>
+      <div class="grid-2">
+        <div id="js-map" class="map"></div>
+      </div>
+    </div>
+
+    <div class="overlay-container">
+      <span class='overlayer-text' id='feature-name'></span><br>
+      <span class='overlayer-text' id='feature-additional-info'></span><br>
+    </div>
+
+    
     <script src="./main.js"></script>
     <script src="./libs/V6.8.1-dist/ol.js"></script>
   </body>
